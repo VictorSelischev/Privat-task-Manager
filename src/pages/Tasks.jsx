@@ -2,9 +2,9 @@ export default function Tasks() {
     return (
         <>
             <title>Your tasks</title>
-            <TasksEditor />
+            <TaskEditor />
             <div>Request in progress...</div>
-            <TasksList />
+            <TaskList />
         </>
     );
 }
