@@ -9,6 +9,10 @@ const LoginPage = lazy(() => import('../pages/Login'));
 const TasksPage = lazy(() => import('../pages/Tasks'));
 
 export const App = () => {
+
+  const dispatch = useDispatch();
+  useEffect(() => {}, [dispatch]);
+
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
