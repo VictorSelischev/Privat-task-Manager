@@ -4,8 +4,8 @@ import css from './Navigation.module.css';
 export const Navigation = () => {
     return (
         <nav>
-            <NavLink to='/'>Home</NavLink>
-            <NavLink to='/tasks'>Tasks</NavLink>
+            <NavLink className={css.link} to='/'>Home</NavLink>
+            <NavLink className={css.link} to='/tasks'>Tasks</NavLink>
         </nav>
     );
 }
