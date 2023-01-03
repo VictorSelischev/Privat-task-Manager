@@ -31,3 +31,21 @@ export const register = createAsyncThunk(
     }
   }
 );
+
+/*
+ POST @ /users/login
+ body: { email, password }
+ */
+export const login = createAsyncThunk(
+  'auth/login',
+  async (credentials, thunkAPI) => {
+    try {
+      const response = await axios.post('/users/login', credentials);
+      // After successful login, add the token to the HTTP header
+      setAuthHeader(response.data.token);
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
