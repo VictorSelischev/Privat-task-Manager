@@ -1,5 +1,6 @@
 import { Navigation } from '../Navigation/Navigation';
 import { useAuth } from 'hooks';
+import { UserMenu } from 'components/UserMenu/UserMenu';
 import css from './AppBar.module.css';
 
 export const AppBar = () => {
