@@ -1,8 +1,24 @@
 import css from './RegisterForm.module.css';
+import { useDispatch } from 'react-redux';
+import {register} from 'redux/auth/authOperations';
 
 export const RegisterForm = () => {
+
+  const dispatch = useDispatch();
+
+const handleSubmit = e => {
+  e.preventDefault();
+  const form = e.currentTagret;
+  dispatch(register({
+    name: form.elements.name.value,
+    email: form.elements.email.value,
+    password: form.elements.password.value,
+  }));
+  form.reset();
+}
+
   return (
-    <form className={css.form} autoComplete='off'>
+    <form className={css.form} autoComplete='off' onSubmit={handleSubmit} >
       <label className={css.label}>Username
         <input type="text" name='name' />
       </label>
